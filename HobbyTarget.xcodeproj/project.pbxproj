@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B2216D52C63DCA100AEB3EB /* HobbyTargetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216D42C63DCA100AEB3EB /* HobbyTargetApp.swift */; };
-		0B2216D72C63DCA100AEB3EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216D62C63DCA100AEB3EB /* ContentView.swift */; };
+		0B2216D72C63DCA100AEB3EB /* Home-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216D62C63DCA100AEB3EB /* Home-View.swift */; };
 		0B2216D92C63DCA200AEB3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2216D82C63DCA200AEB3EB /* Assets.xcassets */; };
 		0B2216DC2C63DCA200AEB3EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2216DB2C63DCA200AEB3EB /* Preview Assets.xcassets */; };
 		0B2216DE2C63DCA200AEB3EB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216DD2C63DCA200AEB3EB /* Persistence.swift */; };
@@ -16,6 +16,12 @@
 		0B2216EB2C63DCA200AEB3EB /* HobbyTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216EA2C63DCA200AEB3EB /* HobbyTargetTests.swift */; };
 		0B2216F52C63DCA200AEB3EB /* HobbyTargetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216F42C63DCA200AEB3EB /* HobbyTargetUITests.swift */; };
 		0B2216F72C63DCA200AEB3EB /* HobbyTargetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2216F62C63DCA200AEB3EB /* HobbyTargetUITestsLaunchTests.swift */; };
+		0B2217082C63DF6A00AEB3EB /* CreateHobby-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217072C63DF6A00AEB3EB /* CreateHobby-View.swift */; };
+		0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */; };
+		0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */; };
+		0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */; };
+		0BB8C3062C648F1B004D1D01 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3052C648F1B004D1D01 /* DetailView.swift */; };
+		0BB8C3082C6496FC004D1D01 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3072C6496FC004D1D01 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 /* Begin PBXFileReference section */
 		0B2216D12C63DCA100AEB3EB /* HobbyTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2216D42C63DCA100AEB3EB /* HobbyTargetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyTargetApp.swift; sourceTree = "<group>"; };
-		0B2216D62C63DCA100AEB3EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0B2216D62C63DCA100AEB3EB /* Home-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-View.swift"; sourceTree = "<group>"; };
 		0B2216D82C63DCA200AEB3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B2216DB2C63DCA200AEB3EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B2216DD2C63DCA200AEB3EB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +54,12 @@
 		0B2216F02C63DCA200AEB3EB /* HobbyTargetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HobbyTargetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2216F42C63DCA200AEB3EB /* HobbyTargetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyTargetUITests.swift; sourceTree = "<group>"; };
 		0B2216F62C63DCA200AEB3EB /* HobbyTargetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyTargetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0B2217072C63DF6A00AEB3EB /* CreateHobby-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateHobby-View.swift"; sourceTree = "<group>"; };
+		0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-ViewModel.swift"; sourceTree = "<group>"; };
+		0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyViewModel.swift; sourceTree = "<group>"; };
+		0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HobbyRow-View.swift"; sourceTree = "<group>"; };
+		0BB8C3052C648F1B004D1D01 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0BB8C3072C6496FC004D1D01 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +110,10 @@
 		0B2216D32C63DCA100AEB3EB /* HobbyTarget */ = {
 			isa = PBXGroup;
 			children = (
-				0B2216D42C63DCA100AEB3EB /* HobbyTargetApp.swift */,
-				0B2216D62C63DCA100AEB3EB /* ContentView.swift */,
-				0B2216D82C63DCA200AEB3EB /* Assets.xcassets */,
-				0B2216DD2C63DCA200AEB3EB /* Persistence.swift */,
-				0B2216DF2C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld */,
+				0B2217042C63DE1E00AEB3EB /* App */,
+				0B2217032C63DE1500AEB3EB /* View */,
+				0B2217052C63DE4C00AEB3EB /* Model */,
+				0B2217062C63DE5C00AEB3EB /* ViewModel */,
 				0B2216DA2C63DCA200AEB3EB /* Preview Content */,
 			);
 			path = HobbyTarget;
@@ -131,6 +142,85 @@
 				0B2216F62C63DCA200AEB3EB /* HobbyTargetUITestsLaunchTests.swift */,
 			);
 			path = HobbyTargetUITests;
+			sourceTree = "<group>";
+		};
+		0B2217032C63DE1500AEB3EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B22170B2C63E23100AEB3EB /* Home */,
+				0B22170F2C63E29E00AEB3EB /* Hobby */,
+				0BB8C3092C649703004D1D01 /* History */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B2217042C63DE1E00AEB3EB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0B2216D82C63DCA200AEB3EB /* Assets.xcassets */,
+				0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */,
+				0B2216D42C63DCA100AEB3EB /* HobbyTargetApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0B2217052C63DE4C00AEB3EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B2216DD2C63DCA200AEB3EB /* Persistence.swift */,
+				0B2216DF2C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B2217062C63DE5C00AEB3EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B22170E2C63E29400AEB3EB /* Home */,
+				0B2217102C63E2AC00AEB3EB /* Hobby */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B22170B2C63E23100AEB3EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0B2216D62C63DCA100AEB3EB /* Home-View.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0B22170E2C63E29400AEB3EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0B22170F2C63E29E00AEB3EB /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				0B2217072C63DF6A00AEB3EB /* CreateHobby-View.swift */,
+				0BB8C3052C648F1B004D1D01 /* DetailView.swift */,
+			);
+			path = Hobby;
+			sourceTree = "<group>";
+		};
+		0B2217102C63E2AC00AEB3EB /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */,
+			);
+			path = Hobby;
+			sourceTree = "<group>";
+		};
+		0BB8C3092C649703004D1D01 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0BB8C3072C6496FC004D1D01 /* HistoryView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2216DE2C63DCA200AEB3EB /* Persistence.swift in Sources */,
-				0B2216D72C63DCA100AEB3EB /* ContentView.swift in Sources */,
+				0BB8C3062C648F1B004D1D01 /* DetailView.swift in Sources */,
+				0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */,
+				0B2217082C63DF6A00AEB3EB /* CreateHobby-View.swift in Sources */,
+				0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */,
+				0B2216D72C63DCA100AEB3EB /* Home-View.swift in Sources */,
+				0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */,
+				0BB8C3082C6496FC004D1D01 /* HistoryView.swift in Sources */,
 				0B2216D52C63DCA100AEB3EB /* HobbyTargetApp.swift in Sources */,
 				0B2216E12C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld in Sources */,
 			);
