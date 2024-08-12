@@ -18,14 +18,19 @@ struct HomeView: View {
     private var hobbies: FetchedResults<Hobby>
 
     // View Model
-    @ObservedObject var homeVM = HomeViewModel()
+    @ObservedObject var homeVM: HomeViewModel
+    
+    init() {
+        let context = PersistenceController.shared.container.viewContext
+        _homeVM = ObservedObject(wrappedValue: HomeViewModel(context: context))
+    }
     
    var body: some View {
         NavigationView {
             List {
                 ForEach(hobbies) { hobby in
                     NavigationLink {
-                        DetailView(hobby: hobby)
+                        DetailHobbyView(hobby: hobby)
                     } label: {
                         HobbyRowView(hobby: hobby)
                     }

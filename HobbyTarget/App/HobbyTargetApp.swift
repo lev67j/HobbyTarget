@@ -6,24 +6,35 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
 struct HobbyTargetApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             TabView {
                 
                 HomeView()
+                //  .environment(\.managedObjectContext, appDelegate.persistentContainer.viewContext)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
-                        }
+                    }
                 
-                
+                HistoryView()
+                //  .environment(\.managedObjectContext, appDelegate.persistentContainer.viewContext)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Image(systemName: "calendar.badge.clock")
+                        Text("History")
+                    }
             }
         }
     }
 }
+

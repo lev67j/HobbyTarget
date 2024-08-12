@@ -66,7 +66,7 @@
      private func startTimer() {
          if !isRunning {
              isRunning = true
-             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+             timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: true) { _ in
                  elapsedTime += 1.0
              }
          }
