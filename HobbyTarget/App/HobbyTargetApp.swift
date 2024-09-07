@@ -19,7 +19,6 @@ struct HobbyTargetApp: App {
             TabView {
                 
                 HomeView()
-                //  .environment(\.managedObjectContext, appDelegate.persistentContainer.viewContext)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Image(systemName: "house")
@@ -27,7 +26,6 @@ struct HobbyTargetApp: App {
                     }
                 
                 HistoryView()
-                //  .environment(\.managedObjectContext, appDelegate.persistentContainer.viewContext)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Image(systemName: "calendar.badge.clock")

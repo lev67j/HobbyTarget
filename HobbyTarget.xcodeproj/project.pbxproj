@@ -20,21 +20,21 @@
 		0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */; };
 		0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */; };
 		0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */; };
+		0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */; };
+		0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */; };
 		0B6A8FFF2C675EB700840C06 /* DayHobbyRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A8FFE2C675EB700840C06 /* DayHobbyRow-View.swift */; };
 		0B6A90012C67681E00840C06 /* MonthStatisticRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A90002C67681E00840C06 /* MonthStatisticRow-View.swift */; };
 		0B6A90032C6769DF00840C06 /* PeriodStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */; };
 		0B8F09E12C68C89B00EF7423 /* EmptyMonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */; };
 		0BA115762C65DFAA00D12826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115752C65DFAA00D12826 /* AppDelegate.swift */; };
-		0BA115782C663B6F00D12826 /* MonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115772C663B6F00D12826 /* MonthStatistic-View.swift */; };
+		0BA115782C663B6F00D12826 /* MonthAverage-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115772C663B6F00D12826 /* MonthAverage-View.swift */; };
 		0BA1157B2C663C0400D12826 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1157A2C663C0400D12826 /* Date+.swift */; };
 		0BA1157D2C663D0A00D12826 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1157C2C663D0A00D12826 /* Period.swift */; };
 		0BB8C3062C648F1B004D1D01 /* DetailHobby-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3052C648F1B004D1D01 /* DetailHobby-View.swift */; };
 		0BB8C3082C6496FC004D1D01 /* History-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3072C6496FC004D1D01 /* History-View.swift */; };
 		0BB8C30C2C64F648004D1D01 /* Month-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C30B2C64F648004D1D01 /* Month-View.swift */; };
-		0BB8C30E2C64F666004D1D01 /* Weak-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C30D2C64F666004D1D01 /* Weak-View.swift */; };
 		0BB8C3102C64F671004D1D01 /* Day-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C30F2C64F671004D1D01 /* Day-View.swift */; };
-		0BB8C3122C64F6C9004D1D01 /* DetailHistory-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3112C64F6C9004D1D01 /* DetailHistory-View.swift */; };
-		0BB8C31C2C64FA24004D1D01 /* MonthPicker-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C31B2C64FA24004D1D01 /* MonthPicker-View.swift */; };
+		0BB8C31C2C64FA24004D1D01 /* MonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */; };
 		0BB8C3212C6500AD004D1D01 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3202C6500AD004D1D01 /* DateValue.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,21 +72,21 @@
 		0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-ViewModel.swift"; sourceTree = "<group>"; };
 		0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyViewModel.swift; sourceTree = "<group>"; };
 		0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HobbyRow-View.swift"; sourceTree = "<group>"; };
+		0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimePerDay.swift; sourceTree = "<group>"; };
+		0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Month-ViewModel.swift"; sourceTree = "<group>"; };
 		0B6A8FFE2C675EB700840C06 /* DayHobbyRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayHobbyRow-View.swift"; sourceTree = "<group>"; };
 		0B6A90002C67681E00840C06 /* MonthStatisticRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthStatisticRow-View.swift"; sourceTree = "<group>"; };
 		0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStateViewModel.swift; sourceTree = "<group>"; };
 		0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyMonthStatistic-View.swift"; sourceTree = "<group>"; };
 		0BA115752C65DFAA00D12826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0BA115772C663B6F00D12826 /* MonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthStatistic-View.swift"; sourceTree = "<group>"; };
+		0BA115772C663B6F00D12826 /* MonthAverage-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthAverage-View.swift"; sourceTree = "<group>"; };
 		0BA1157A2C663C0400D12826 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0BA1157C2C663D0A00D12826 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		0BB8C3052C648F1B004D1D01 /* DetailHobby-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailHobby-View.swift"; sourceTree = "<group>"; };
 		0BB8C3072C6496FC004D1D01 /* History-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History-View.swift"; sourceTree = "<group>"; };
 		0BB8C30B2C64F648004D1D01 /* Month-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Month-View.swift"; sourceTree = "<group>"; };
-		0BB8C30D2C64F666004D1D01 /* Weak-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weak-View.swift"; sourceTree = "<group>"; };
 		0BB8C30F2C64F671004D1D01 /* Day-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day-View.swift"; sourceTree = "<group>"; };
-		0BB8C3112C64F6C9004D1D01 /* DetailHistory-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailHistory-View.swift"; sourceTree = "<group>"; };
-		0BB8C31B2C64FA24004D1D01 /* MonthPicker-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthPicker-View.swift"; sourceTree = "<group>"; };
+		0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthStatistic-View.swift"; sourceTree = "<group>"; };
 		0BB8C3202C6500AD004D1D01 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,21 +246,40 @@
 			path = Hobby;
 			sourceTree = "<group>";
 		};
+		0B5D15A52C8B38BF001F7025 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */,
+				0BA115772C663B6F00D12826 /* MonthAverage-View.swift */,
+				0B6A90002C67681E00840C06 /* MonthStatisticRow-View.swift */,
+				0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		0B5D15A82C8B3CB3001F7025 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
 		0B6A90042C6769E500840C06 /* Period */ = {
 			isa = PBXGroup;
 			children = (
 				0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */,
+				0B5D15A82C8B3CB3001F7025 /* Month */,
 			);
 			path = Period;
 			sourceTree = "<group>";
 		};
-		0B6A90052C676E8E00840C06 /* State */ = {
+		0B6A90052C676E8E00840C06 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				0BA115772C663B6F00D12826 /* MonthStatistic-View.swift */,
-				0B6A90002C67681E00840C06 /* MonthStatisticRow-View.swift */,
+				0B5D15A52C8B38BF001F7025 /* Statistic */,
 			);
-			path = State;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		0BA115732C65D14300D12826 /* Month */ = {
@@ -283,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				0BB8C3072C6496FC004D1D01 /* History-View.swift */,
-				0BB8C3132C64F6D6004D1D01 /* Detail */,
 				0BB8C30A2C64F631004D1D01 /* Period */,
 			);
 			path = History;
@@ -294,37 +312,19 @@
 			children = (
 				0BA1157C2C663D0A00D12826 /* Period.swift */,
 				0BB8C3172C64F894004D1D01 /* Month */,
-				0BB8C3182C64F89E004D1D01 /* Weak */,
 				0BB8C3192C64F8A8004D1D01 /* Day */,
 			);
 			path = Period;
-			sourceTree = "<group>";
-		};
-		0BB8C3132C64F6D6004D1D01 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				0BB8C3112C64F6C9004D1D01 /* DetailHistory-View.swift */,
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		0BB8C3172C64F894004D1D01 /* Month */ = {
 			isa = PBXGroup;
 			children = (
 				0BB8C30B2C64F648004D1D01 /* Month-View.swift */,
-				0BB8C31B2C64FA24004D1D01 /* MonthPicker-View.swift */,
-				0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */,
-				0B6A90052C676E8E00840C06 /* State */,
+				0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */,
+				0B6A90052C676E8E00840C06 /* SubView */,
 			);
 			path = Month;
-			sourceTree = "<group>";
-		};
-		0BB8C3182C64F89E004D1D01 /* Weak */ = {
-			isa = PBXGroup;
-			children = (
-				0BB8C30D2C64F666004D1D01 /* Weak-View.swift */,
-			);
-			path = Weak;
 			sourceTree = "<group>";
 		};
 		0BB8C3192C64F8A8004D1D01 /* Day */ = {
@@ -484,23 +484,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8F09E12C68C89B00EF7423 /* EmptyMonthStatistic-View.swift in Sources */,
-				0BB8C31C2C64FA24004D1D01 /* MonthPicker-View.swift in Sources */,
+				0BB8C31C2C64FA24004D1D01 /* MonthStatistic-View.swift in Sources */,
 				0BB8C30C2C64F648004D1D01 /* Month-View.swift in Sources */,
 				0B2216DE2C63DCA200AEB3EB /* Persistence.swift in Sources */,
 				0B6A90012C67681E00840C06 /* MonthStatisticRow-View.swift in Sources */,
 				0BB8C3102C64F671004D1D01 /* Day-View.swift in Sources */,
+				0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */,
+				0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */,
 				0BB8C3062C648F1B004D1D01 /* DetailHobby-View.swift in Sources */,
 				0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */,
-				0BB8C30E2C64F666004D1D01 /* Weak-View.swift in Sources */,
 				0BA1157B2C663C0400D12826 /* Date+.swift in Sources */,
-				0BB8C3122C64F6C9004D1D01 /* DetailHistory-View.swift in Sources */,
 				0B2217082C63DF6A00AEB3EB /* CreateHobby-View.swift in Sources */,
 				0B6A90032C6769DF00840C06 /* PeriodStateViewModel.swift in Sources */,
 				0B6A8FFF2C675EB700840C06 /* DayHobbyRow-View.swift in Sources */,
 				0BA1157D2C663D0A00D12826 /* Period.swift in Sources */,
 				0BA115762C65DFAA00D12826 /* AppDelegate.swift in Sources */,
 				0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */,
-				0BA115782C663B6F00D12826 /* MonthStatistic-View.swift in Sources */,
+				0BA115782C663B6F00D12826 /* MonthAverage-View.swift in Sources */,
 				0B2216D72C63DCA100AEB3EB /* Home-View.swift in Sources */,
 				0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */,
 				0BB8C3082C6496FC004D1D01 /* History-View.swift in Sources */,

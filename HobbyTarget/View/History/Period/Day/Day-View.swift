@@ -8,19 +8,10 @@
 import SwiftUI
 
 struct DayView: View {
-    
-    // Core Data
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Hobby.name, ascending: true)],
-        animation: .default)
-    private var hobbies: FetchedResults<Hobby>
 
-    init() {
-        let context = PersistenceController.shared.container.viewContext
-     }
-    
-    
+    // View Model
+   @ObservedObject var monthVM: MonthViewModel
+   
     var body: some View {
         ZStack {
             Rectangle()
@@ -30,10 +21,10 @@ struct DayView: View {
             
             
             VStack {
-                ForEach(hobbies, id: \.id) { hobby in
+                ForEach(monthVM.hobbies, id: \.id) { hobby in
                     DayHobbyRowView(hobby: hobby)
                         
-                    if hobbies.endIndex < hobbies.count - 1 || hobbies.count > 1 {
+                    if monthVM.hobbies.endIndex < monthVM.hobbies.count - 1 || monthVM.hobbies.count > 1 {
                         Divider()
                             .padding(.horizontal)
                     }

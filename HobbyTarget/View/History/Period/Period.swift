@@ -8,6 +8,6 @@
 import Foundation
 
 enum Period: String, CaseIterable {
-    case month, week, day
+    case month, day
 }
 

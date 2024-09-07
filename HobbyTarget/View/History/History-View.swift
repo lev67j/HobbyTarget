@@ -12,8 +12,15 @@ import CoreData
 struct HistoryView: View {
     
     // Periods and date
-    @State private var selectedPeriod: Period = .day
+    @State private var selectedPeriod: Period = .month
     @State private var selectedDate: Date = Date()
+    
+    // View Model
+    @StateObject var monthVM: MonthViewModel
+    
+    init() {
+        _monthVM = StateObject(wrappedValue: MonthViewModel(context: PersistenceController.shared.container.viewContext))
+    }
     
     var body: some View {
         NavigationStack {
@@ -29,14 +36,12 @@ struct HistoryView: View {
                 ScrollView {
                         switch selectedPeriod {
                         case .month:
-                            MonthView()
-                        case .week:
-                            WeekView() //(hobby: hobby)
+                            MonthView(monthVM: monthVM)
                         case .day:
-                            DayView() //(hobby: hobby)
-                    }
+                            DayView(monthVM: monthVM)
+                          }
                 }
-                .navigationTitle("History")
+                .navigationTitle("Statistic")
             }
         }
     }

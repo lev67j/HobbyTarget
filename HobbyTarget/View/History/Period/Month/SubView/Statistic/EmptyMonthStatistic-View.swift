@@ -1,5 +1,5 @@
 //
-//  EmptyMonthStatisticView.swift
+//  EmptyHobbyView.swift
 //  HobbyTarget
 //
 //  Created by Lev Vlasov on 11.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmptyMonthStatisticView: View {
+struct EmptyHobbyView: View {
     var body: some View {
         Text("👀 No Hobby")
             .font(.system(size: 17).bold())
@@ -15,5 +15,5 @@ struct EmptyMonthStatisticView: View {
 }
 
 #Preview {
-    EmptyMonthStatisticView()
+    EmptyHobbyView()
 }

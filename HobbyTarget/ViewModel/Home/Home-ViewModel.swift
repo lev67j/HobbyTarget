@@ -21,12 +21,12 @@ final class HomeViewModel: ObservableObject {
         scheduleDailyResetNotification()
     }
     
-   
+
     private func scheduleDailyResetNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Сброс времени"
-        content.body = "Параметр timeForToday был сброшен."
-        content.sound = .default
+        content.title = ""
+        content.body = ""
+        content.sound = nil
 
         var dateComponents = DateComponents()
         dateComponents.hour = 0
@@ -37,46 +37,51 @@ final class HomeViewModel: ObservableObject {
 
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("Ошибка при добавлении уведомления: \(error)")
+                print("Error add notify: \(error)")
             }
         }
     }
     
     
     private func setupDailyReset() {
-        // Сброс параметра в полночь
+        // Reset
         let calendar = Calendar.current
         let now = Date()
         
-        // Получаем следующий день и время 00:00:00
+        // Get next day and time - 00:00:00
         var components = calendar.dateComponents([.year, .month, .day], from: now)
         components.day! += 1
         components.hour = 0
         components.minute = 0
         components.second = 0
         
-        // Создаем дату для следующего сброса
+        // Cerate date for next reset
         let nextMidnight = calendar.date(from: components)!
         
-        // Устанавливаем таймер на сброс
+        // Timer for reset
+        let today = Date()
         timer = Timer(fire: nextMidnight, interval: 86400, repeats: true) { [weak self] _ in
-            self?.resetTimeForToday()
+            self?.resetTimeForToday(for: today)
         }
-        
+        // Add timer in Run Time
         RunLoop.main.add(timer!, forMode: .common)
     }
     
-     func resetTimeForToday() {
+    func resetTimeForToday(for date: Date) {
         let fetchRequest: NSFetchRequest<Hobby> = Hobby.fetchRequest()
         
         do {
             let hobbies = try context.fetch(fetchRequest)
             for hobby in hobbies {
-                // Сохраняем текущее значение timeForToday в новый параметр monthlyTime
+                
+                // Save timeForToday in monthlyTime
                 hobby.monthlyTime += hobby.timeForToday
                 
-                // Сбрасываем timeForToday
+                // Reset timeForToday
                 hobby.timeForToday = 0
+                
+                // Check save monthlyTime and date
+                print("Check monthlyTime: \(hobby.monthlyTime)")
             }
             try context.save()
         } catch {

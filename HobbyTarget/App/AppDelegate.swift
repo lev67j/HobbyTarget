@@ -16,10 +16,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
          
-        // Запрашиваем разрешение на уведомления
+        // Request permission for notify
         requestNotificationPermission()
         
-        // Запланируем "тихое" уведомление
+        // Let's plan "silent" notify
         scheduleSilentNotification()
         return true
     }
@@ -36,23 +36,23 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     private func scheduleSilentNotification() {
         let center = UNUserNotificationCenter.current()
         
-        // Создание содержимого уведомления
+        // Create content notify
         let content = UNMutableNotificationContent()
-        content.title = "" // Не отображается
-        content.body = "" // Не отображается
-        content.sound = nil // Без звука
+        content.title = ""
+        content.body = ""
+        content.sound = nil
         
-        // Настройка времени уведомления (например, каждый день в 00:00)
+        // Settings time notify - 00:00
         var dateComponents = DateComponents()
         dateComponents.hour = 0
         dateComponents.minute = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        // Создание запроса на уведомление
+        // Create request for notify
         let request = UNNotificationRequest(identifier: "dailyReset", content: content, trigger: trigger)
         
-        // Добавление запроса в центр уведомлений
+        // Add request in Notification Center
         center.add(request) { error in
             if let error = error {
                 print("Error adding notification: \(error)")
@@ -62,8 +62,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.notification.request.identifier == "dailyReset" {
-            // Здесь вы можете получить доступ к вашему контексту и сбросить timeForToday
-            homeVM.resetTimeForToday()
+            // reset
+            let today = Date()
+            homeVM.resetTimeForToday(for: today)
         }
         completionHandler()
     }

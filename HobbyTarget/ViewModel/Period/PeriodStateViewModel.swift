@@ -8,6 +8,7 @@
 import Foundation
 
 final class PeriodStateViewModel: ObservableObject {
+    
     // formatTime
     func formatTime(_ time: TimeInterval) -> String {
         let hours = Int(time) / 3600

@@ -25,17 +25,24 @@ struct HomeView: View {
         _homeVM = ObservedObject(wrappedValue: HomeViewModel(context: context))
     }
     
-   var body: some View {
+    
+  
+        
+    var body: some View {
         NavigationView {
             List {
-                ForEach(hobbies) { hobby in
-                    NavigationLink {
-                        DetailHobbyView(hobby: hobby)
-                    } label: {
-                        HobbyRowView(hobby: hobby)
+                if hobbies.isEmpty {
+                    EmptyHobbyView()
+                } else {
+                    ForEach(hobbies) { hobby in
+                        NavigationLink {
+                            DetailHobbyView(hobby: hobby)
+                        } label: {
+                            HobbyRowView(hobby: hobby)
+                        }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -56,7 +63,7 @@ struct HomeView: View {
             Text("Select an item")
         }
     }
-
+        
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { hobbies[$0] }.forEach(viewContext.delete)

@@ -10,11 +10,11 @@ import SwiftUI
 struct MonthStatisticRowView: View {
     
     // View Model
-    @ObservedObject var periodVM = PeriodStateViewModel()
-   
+    @ObservedObject var monthVM: MonthViewModel
+    
     // Hobby
     var hobby: Hobby
-   
+    
     var body: some View {
         VStack {
             
@@ -24,7 +24,8 @@ struct MonthStatisticRowView: View {
                 
                 Spacer()
                 
-                Text("\(periodVM.formatTime(hobby.monthlyTime))")
+             //   Text("\(periodVM.formatTime(hobby.monthlyTime))")
+                Text(monthVM.formatTime(monthVM.averageTimeOneHobby(for: hobby)))
                     .bold()
             }
             .padding()
