@@ -8,31 +8,13 @@
 import SwiftUI
 import CoreData
 
-
-
 final class MonthViewModel: ObservableObject {
     
+    private var context: NSManagedObjectContext
     
-    // Core Data
-    private var viewContext: NSManagedObjectContext
-    @Published var hobbies: [Hobby] = []
-   
     init(context: NSManagedObjectContext) {
-        self.viewContext = context
-       fetchHobby()
+        self.context = context
     }
-    
-    private func fetchHobby() {
-        let request: NSFetchRequest<Hobby> = Hobby.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Hobby.name, ascending: true)]
-        
-        do {
-            hobbies = try viewContext.fetch(request)
-        } catch {
-            print("failed fetch")
-        }
-    }
-    
     
     // formatTime
     func formatTime(_ time: TimeInterval) -> String {
@@ -48,7 +30,6 @@ final class MonthViewModel: ObservableObject {
         }
     }
     
-    
     // Current Month
     func currentMonth() -> String {
         let dateFormatter = DateFormatter()
@@ -56,13 +37,14 @@ final class MonthViewModel: ObservableObject {
         return dateFormatter.string(from: Date())
     }
     
-    
-    func totalMonthlyTime() -> Double {
+    func totalMonthlyTime(hobbies: FetchedResults<Hobby>) -> Double {
         Double(hobbies.reduce(0) { $0 + ($1.monthlyTime) })
     }
     
-    func averageTimePerDay() -> Double {
-        let totalTime = totalMonthlyTime()
+    
+    // Time Per Day
+    func averageTimePerDay(hobbies: FetchedResults<Hobby>) -> Double {
+        let totalTime = totalMonthlyTime(hobbies: hobbies)
         let currentDay = Calendar.current.component(.day, from: Date())
         
         guard currentDay > 0 else { return 0 }
@@ -70,6 +52,7 @@ final class MonthViewModel: ObservableObject {
         return totalTime / Double(currentDay)
     }
     
+    // Time One Hobby
     func averageTimeOneHobby(for hobby: Hobby) -> Double {
         let totalTime = hobby.monthlyTime
         let currentDay = Calendar.current.component(.day, from: Date())
@@ -77,5 +60,16 @@ final class MonthViewModel: ObservableObject {
         guard currentDay > 0 else { return 0 }
         
         return totalTime / Double(currentDay)
+    }
+    
+    // Rest Time
+    func averageRestTime(hobbies: FetchedResults<Hobby>) -> Double {
+        let aviableTime = 24.0 - 8.0
+        let timePerDay = averageTimePerDay(hobbies: hobbies)
+        
+        // average rest time
+        let restTime = aviableTime - timePerDay
+        
+        return max(0, restTime)
     }
 }

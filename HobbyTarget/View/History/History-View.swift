@@ -14,14 +14,7 @@ struct HistoryView: View {
     // Periods and date
     @State private var selectedPeriod: Period = .month
     @State private var selectedDate: Date = Date()
-    
-    // View Model
-    @StateObject var monthVM: MonthViewModel
-    
-    init() {
-        _monthVM = StateObject(wrappedValue: MonthViewModel(context: PersistenceController.shared.container.viewContext))
-    }
-    
+   
     var body: some View {
         NavigationStack {
             VStack {
@@ -36,9 +29,9 @@ struct HistoryView: View {
                 ScrollView {
                         switch selectedPeriod {
                         case .month:
-                            MonthView(monthVM: monthVM)
+                            MonthView()
                         case .day:
-                            DayView(monthVM: monthVM)
+                            DayView()
                           }
                 }
                 .navigationTitle("Statistic")

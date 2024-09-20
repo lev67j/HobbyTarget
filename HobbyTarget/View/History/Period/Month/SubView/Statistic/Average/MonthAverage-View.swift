@@ -1,14 +1,14 @@
 //
-//  DayView.swift
+//  MonthStatisticView.swift
 //  HobbyTarget
 //
-//  Created by Lev Vlasov on 08.08.2024.
+//  Created by Lev Vlasov on 09.08.2024.
 //
 
 import SwiftUI
 
-struct DayView: View {
-
+struct MonthAverageView: View {
+    
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -18,8 +18,6 @@ struct DayView: View {
     
     // View Model
     @ObservedObject var monthVM: MonthViewModel
-    @ObservedObject var periodVM = PeriodStateViewModel()
-   
     
     init() {
         let context = PersistenceController.shared.container.viewContext
@@ -44,15 +42,10 @@ struct DayView: View {
                             
                             Spacer()
                             
-                            Text("\(periodVM.formatTime(hobby.timeForToday))")
+                            Text(monthVM.formatTime(monthVM.averageTimeOneHobby(for: hobby)))
                                 .bold()
                         }
                         .padding()
-                    }
-                    
-                    if hobbies.endIndex < hobbies.count - 1 || hobbies.count > 1 {
-                        Divider()
-                            .padding(.horizontal)
                     }
                 }
             }

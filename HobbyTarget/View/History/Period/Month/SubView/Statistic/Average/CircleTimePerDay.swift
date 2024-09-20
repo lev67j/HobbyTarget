@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct CircleTimePerDay: View {
+   
+    // Core Data
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Hobby.name, ascending: true)],
+        animation: .default)
+    private var hobbies: FetchedResults<Hobby>
     
     // View Model
     @ObservedObject var monthVM: MonthViewModel
+   
+    init() {
+        let context = PersistenceController.shared.container.viewContext
+        _monthVM = ObservedObject(wrappedValue: MonthViewModel(context: context))
+    }
     
     var body: some View {
         ZStack {
@@ -36,11 +48,13 @@ struct CircleTimePerDay: View {
                         .frame(width: 200, height: 200)
                     
                     
-                    Text(monthVM.formatTime(monthVM.averageTimePerDay()))
+                    Text(monthVM.formatTime(monthVM.averageTimePerDay(hobbies: hobbies)))
                         .font(.title2.bold())
                 }
             }
             .padding()
         }
     }
+    
+   
 }

@@ -17,13 +17,13 @@ struct HobbyTargetApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                
+              
                 HomeView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
                 
                 HistoryView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)

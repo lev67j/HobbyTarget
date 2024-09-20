@@ -13,16 +13,31 @@
      @Environment(\.managedObjectContext) private var viewContext
      var hobby: Hobby
     
+     // Timer
      @State private var timer: Timer?
      @State private var elapsedTime: TimeInterval = 0.0
      @State private var isRunning: Bool = false
 
+     // UserDefaults
+     private let timerKey: String
+     private let isRunningKey: String
+     
+     
+     init(hobby: Hobby) {
+         // UserDefaults
+         self.hobby = hobby
+         self.timerKey = "\(hobby.id).timer"
+         self.isRunningKey = "\(hobby.id).isRunning"
+     }
+     
      var body: some View {
          VStack(alignment: .leading) {
              Text(hobby.name ?? "Unknown")
                  .font(.headline)
+                 .foregroundStyle(.black)
+             
              Text("today \(formatTime(hobby.timeForToday))")
-                   .font(.subheadline)
+                 .font(.subheadline)
                  .foregroundColor(.gray)
              
              Divider()
@@ -40,8 +55,11 @@
                  }
                  .buttonStyle(PlainButtonStyle())
                  
-                 Text(formatTime(elapsedTime))
-                    
+                 if isRunning {
+                     Text(formatTime(elapsedTime))
+                         .foregroundStyle(.black)
+                 }
+                 
                  Button {
                      stopTimer()
                  } label: {
@@ -61,12 +79,27 @@
          .cornerRadius(15)
          .shadow(radius: 5)
          .padding(.horizontal)
+         .onAppear {
+             loadTimerState()
+             
+             print("loadTimerState()")
+            
+             if isRunning {
+                 startTimer()
+                 print(" if isRunning - startTimer()")
+             }
+         }
+         .onDisappear {
+             stopTimer()
+             print("stopTimer()")
+         }
      }
      
      private func startTimer() {
          if !isRunning {
              isRunning = true
-             timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: true) { _ in
+             saveTimerState()
+             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                  elapsedTime += 1.0
              }
          }
@@ -85,11 +118,24 @@
          }
          
          // stop
-         elapsedTime = 0
+        // elapsedTime = 0
          isRunning = false
          timer?.invalidate()
          timer = nil
+         
+         saveTimerState()
      }
+     
+     private func saveTimerState() {
+         UserDefaults.standard.set(elapsedTime, forKey: timerKey)
+         UserDefaults.standard.set(isRunning, forKey: isRunningKey)
+     }
+     
+     private func loadTimerState() {
+         elapsedTime = UserDefaults.standard.double(forKey: timerKey)
+         isRunning = UserDefaults.standard.bool(forKey: isRunningKey)
+     }
+     
      
      private func formatTime(_ time: TimeInterval) -> String {
          let hours = Int(time) / 3600

@@ -10,11 +10,7 @@ import CoreData
 
 
 struct MonthStatisticView: View {
-  
-    // View Model
-   @ObservedObject var monthVM: MonthViewModel
-      
-    var body: some View {
+   var body: some View {
         VStack(spacing: 35) {
             
             VStack {
@@ -23,8 +19,11 @@ struct MonthStatisticView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                 
-                CircleTimePerDay(monthVM: monthVM)
+                CircleTimePerDay()
+                
+                RestTime()
             }
+        
             
             VStack {
                 Text("Average time hobby")
@@ -33,7 +32,7 @@ struct MonthStatisticView: View {
                     .padding()
                 
                 // Average time for one hobby
-                MonthAverageView(monthVM: monthVM)
+                MonthAverageView()
             }
         }
     }

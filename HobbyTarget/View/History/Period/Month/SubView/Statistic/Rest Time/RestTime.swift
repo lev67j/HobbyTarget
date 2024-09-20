@@ -1,13 +1,13 @@
 //
-//  DayView.swift
+//  RestTime.swift
 //  HobbyTarget
 //
-//  Created by Lev Vlasov on 08.08.2024.
+//  Created by Lev Vlasov on 11.09.2024.
 //
 
 import SwiftUI
 
-struct DayView: View {
+struct RestTime: View {
 
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
@@ -18,9 +18,7 @@ struct DayView: View {
     
     // View Model
     @ObservedObject var monthVM: MonthViewModel
-    @ObservedObject var periodVM = PeriodStateViewModel()
    
-    
     init() {
         let context = PersistenceController.shared.container.viewContext
         _monthVM = ObservedObject(wrappedValue: MonthViewModel(context: context))
@@ -33,30 +31,23 @@ struct DayView: View {
                 .clipShape(.rect(cornerRadius: 8))
                 .padding(.horizontal)
             
-            
             VStack {
-                ForEach(hobbies, id: \.id) { hobby in
-                    VStack {
-                        
-                        HStack {
-                            Text("\(hobby.name ?? "No Name")")
-                                .bold()
-                            
-                            Spacer()
-                            
-                            Text("\(periodVM.formatTime(hobby.timeForToday))")
-                                .bold()
-                        }
+                
+                HStack {
+                    Text("Rest of the time")
+                        .bold()
                         .padding()
-                    }
                     
-                    if hobbies.endIndex < hobbies.count - 1 || hobbies.count > 1 {
-                        Divider()
-                            .padding(.horizontal)
-                    }
+                    Spacer()
+                    
+                    Text("\(monthVM.formatTime(monthVM.averageRestTime(hobbies: hobbies)))")
+                        .bold()
+                        .padding()
                 }
+                .padding()
+                
             }
-            .padding()
         }
     }
 }
+

@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct MonthView: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    // View Model
-    @ObservedObject var monthVM: MonthViewModel
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators:  false) {
             VStack(spacing: 20) {
                 // Month Picker
-                MonthStatisticView(monthVM: monthVM)
+                MonthStatisticView()
             }
         }
     }

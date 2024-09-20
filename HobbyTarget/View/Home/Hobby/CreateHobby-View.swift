@@ -22,7 +22,7 @@ struct CreateHobbyView: View {
     
     // View Model
     @ObservedObject var createVM = CreateHobbyViewModel()
-  
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -51,7 +51,7 @@ struct CreateHobbyView: View {
                             Text("Cancel")
                         }
                     }
-                  
+                    
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             // save context
@@ -59,7 +59,7 @@ struct CreateHobbyView: View {
                             newHobby.name = createVM.name
                             newHobby.isFavourite = createVM.isFavourite
                             newHobby.notes = createVM.notes
-                            newHobby.timeTarget =  createVM.timeTarget
+                            newHobby.timeTarget = createVM.timeTarget
                             newHobby.dateStart = createVM.dateStart
                             
                             do {
