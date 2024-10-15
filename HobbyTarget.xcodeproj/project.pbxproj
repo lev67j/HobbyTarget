@@ -20,12 +20,12 @@
 		0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */; };
 		0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */; };
 		0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */; };
-		0B31D2832C8CBE1C00ADD256 /* HomeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B31D2822C8CBE1C00ADD256 /* HomeBackground.swift */; };
 		0B44B7D62C921A5A00513186 /* RestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44B7D52C921A5A00513186 /* RestTime.swift */; };
 		0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */; };
 		0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */; };
 		0B6A90032C6769DF00840C06 /* PeriodStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */; };
 		0B8F09E12C68C89B00EF7423 /* EmptyMonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */; };
+		0B98E71B2CA4537C00DF7212 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */; };
 		0BA115762C65DFAA00D12826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115752C65DFAA00D12826 /* AppDelegate.swift */; };
 		0BA115782C663B6F00D12826 /* MonthAverage-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115772C663B6F00D12826 /* MonthAverage-View.swift */; };
 		0BA1157B2C663C0400D12826 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1157A2C663C0400D12826 /* Date+.swift */; };
@@ -72,12 +72,12 @@
 		0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-ViewModel.swift"; sourceTree = "<group>"; };
 		0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyViewModel.swift; sourceTree = "<group>"; };
 		0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HobbyRow-View.swift"; sourceTree = "<group>"; };
-		0B31D2822C8CBE1C00ADD256 /* HomeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBackground.swift; sourceTree = "<group>"; };
 		0B44B7D52C921A5A00513186 /* RestTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTime.swift; sourceTree = "<group>"; };
 		0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimePerDay.swift; sourceTree = "<group>"; };
 		0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Month-ViewModel.swift"; sourceTree = "<group>"; };
 		0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStateViewModel.swift; sourceTree = "<group>"; };
 		0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyMonthStatistic-View.swift"; sourceTree = "<group>"; };
+		0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		0BA115752C65DFAA00D12826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA115772C663B6F00D12826 /* MonthAverage-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthAverage-View.swift"; sourceTree = "<group>"; };
 		0BA1157A2C663C0400D12826 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
@@ -215,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				0B2216D62C63DCA100AEB3EB /* Home-View.swift */,
-				0B31D2822C8CBE1C00ADD256 /* HomeBackground.swift */,
 				0B22170F2C63E29E00AEB3EB /* Hobby */,
 			);
 			path = Home;
@@ -327,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA1157A2C663C0400D12826 /* Date+.swift */,
+				0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -521,6 +521,7 @@
 				0B2216DE2C63DCA200AEB3EB /* Persistence.swift in Sources */,
 				0B44B7D62C921A5A00513186 /* RestTime.swift in Sources */,
 				0BB8C3102C64F671004D1D01 /* Day-View.swift in Sources */,
+				0B98E71B2CA4537C00DF7212 /* UserDefaults+.swift in Sources */,
 				0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */,
 				0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */,
 				0BB8C3062C648F1B004D1D01 /* DetailHobby-View.swift in Sources */,
@@ -536,7 +537,6 @@
 				0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */,
 				0BB8C3082C6496FC004D1D01 /* History-View.swift in Sources */,
 				0BB8C3212C6500AD004D1D01 /* DateValue.swift in Sources */,
-				0B31D2832C8CBE1C00ADD256 /* HomeBackground.swift in Sources */,
 				0B2216D52C63DCA100AEB3EB /* HobbyTargetApp.swift in Sources */,
 				0B2216E12C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld in Sources */,
 			);

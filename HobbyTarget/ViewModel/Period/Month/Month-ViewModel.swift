@@ -11,7 +11,7 @@ import CoreData
 final class MonthViewModel: ObservableObject {
     
     private var context: NSManagedObjectContext
-    
+   
     init(context: NSManagedObjectContext) {
         self.context = context
     }
@@ -29,6 +29,7 @@ final class MonthViewModel: ObservableObject {
             return "0min"
         }
     }
+
     
     // Current Month
     func currentMonth() -> String {
@@ -62,14 +63,13 @@ final class MonthViewModel: ObservableObject {
         return totalTime / Double(currentDay)
     }
     
-    // Rest Time
-    func averageRestTime(hobbies: FetchedResults<Hobby>) -> Double {
-        let aviableTime = 24.0 - 8.0
+    // Rest Time   
+    func averageRestTime(hobbies: FetchedResults<Hobby>) -> String {
+        let workTimeWithSleep = 86400.0 - 28800.0 // 24h - sleep time user
         let timePerDay = averageTimePerDay(hobbies: hobbies)
-        
+         
         // average rest time
-        let restTime = aviableTime - timePerDay
-        
-        return max(0, restTime)
+        let restTime = workTimeWithSleep - timePerDay
+        return formatTime(restTime)
     }
 }

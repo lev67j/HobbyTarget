@@ -13,32 +13,37 @@
      @Environment(\.managedObjectContext) private var viewContext
      var hobby: Hobby
     
+     // AppDelegate
+   //  @ObservedObject var appDelegate = AppDelegate()
+     
      // Timer
      @State private var timer: Timer?
-     @State private var elapsedTime: TimeInterval = 0.0
      @State private var isRunning: Bool = false
-
+/*
      // UserDefaults
-     private let timerKey: String
-     private let isRunningKey: String
-     
-     
-     init(hobby: Hobby) {
-         // UserDefaults
-         self.hobby = hobby
-         self.timerKey = "\(hobby.id).timer"
-         self.isRunningKey = "\(hobby.id).isRunning"
-     }
-     
+     @State private var isStartTime: Bool = UserDefaults.standard.isStart // for save  isStartTime.toggle() UserDefaults.standard.isStart = isStartTime
+     @State private var elapsedTime: TimeInterval = UserDefaults.standard.elapsedTime
+     */
+     @State private var isStartTime: Bool = false
+     @State private var elapsedTime: TimeInterval = 0
+  
      var body: some View {
          VStack(alignment: .leading) {
-             Text(hobby.name ?? "Unknown")
-                 .font(.headline)
-                 .foregroundStyle(.black)
              
-             Text("today \(formatTime(hobby.timeForToday))")
-                 .font(.subheadline)
-                 .foregroundColor(.gray)
+             // For test
+   //          Text("\(hobby.name ?? "Unknown")                                                                                            isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(appDelegate.saveTimeHobby)                                                                             elapsedTime: \(elapsedTime)")
+             
+             HStack {
+                 Text("\(hobby.name ?? "Unknown")")
+                     .font(.headline)
+                     .foregroundStyle(.black)
+                 
+                 Spacer()
+                 
+                 Text("\(hobby.isFavourite ? "⭐️" : "")")
+                     .font(.headline)
+                     .foregroundStyle(.black)
+             }
              
              Divider()
              
@@ -55,7 +60,7 @@
                  }
                  .buttonStyle(PlainButtonStyle())
                  
-                 if isRunning {
+                 if isStartTime {
                      Text(formatTime(elapsedTime))
                          .foregroundStyle(.black)
                  }
@@ -79,34 +84,33 @@
          .cornerRadius(15)
          .shadow(radius: 5)
          .padding(.horizontal)
+         /*
          .onAppear {
-             loadTimerState()
-             
-             print("loadTimerState()")
-            
-             if isRunning {
-                 startTimer()
-                 print(" if isRunning - startTimer()")
-             }
+             loadSavedData()
          }
          .onDisappear {
-             stopTimer()
-             print("stopTimer()")
-         }
-     }
-     
-     private func startTimer() {
-         if !isRunning {
-             isRunning = true
-             saveTimerState()
-             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                 elapsedTime += 1.0
+             if appDelegate.isExitApplication {
+                 stopTimerForExit()
              }
          }
+          */
+     }
+     
+     func startTimer() {
+         //   if isStartTime == false {
+         isStartTime = true
+         
+         // save StartTime
+ //        UserDefaults.standard.isStart = isStartTime
+         
+         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in      // test speed!
+             elapsedTime += 1.0
+         }
+         // }
      }
 
      private func stopTimer() {
-        
+         
          // save result
          hobby.timeForToday += elapsedTime
          
@@ -118,25 +122,37 @@
          }
          
          // stop
-        // elapsedTime = 0
-         isRunning = false
+         elapsedTime = 0
+         isStartTime = false
          timer?.invalidate()
          timer = nil
          
-         saveTimerState()
+         // save StartTime
+       //  UserDefaults.standard.isStart = isStartTime
      }
-     
-     private func saveTimerState() {
-         UserDefaults.standard.set(elapsedTime, forKey: timerKey)
-         UserDefaults.standard.set(isRunning, forKey: isRunningKey)
+     /*
+     private func stopTimerForExit() {
+         
+         // save elapsedTime
+         UserDefaults.standard.elapsedTime = elapsedTime
+         
+         timer?.invalidate()
+         timer = nil
      }
-     
-     private func loadTimerState() {
-         elapsedTime = UserDefaults.standard.double(forKey: timerKey)
-         isRunning = UserDefaults.standard.bool(forKey: isRunningKey)
+         
+     private func loadSavedData() {
+         if let lastCloseTime = UserDefaults.standard.object(forKey: "lastCloseTime") as? Date {
+             DispatchQueue.main.async {
+                 appDelegate.saveTimeHobby = Date().timeIntervalSince(lastCloseTime)
+             }
+         }
+         
+         if isStartTime {
+             elapsedTime += appDelegate.saveTimeHobby
+             startTimer()
+         }
      }
-     
-     
+     */
      private func formatTime(_ time: TimeInterval) -> String {
          let hours = Int(time) / 3600
          let minutes = (Int(time) % 3600) / 60
@@ -150,6 +166,3 @@
          }
      }
  }
-
- 
- 

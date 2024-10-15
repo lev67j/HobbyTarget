@@ -40,7 +40,7 @@ struct RestTime: View {
                     
                     Spacer()
                     
-                    Text("\(monthVM.formatTime(monthVM.averageRestTime(hobbies: hobbies)))")
+                    Text(monthVM.averageRestTime(hobbies: hobbies))  
                         .bold()
                         .padding()
                 }

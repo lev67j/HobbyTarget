@@ -31,7 +31,10 @@ struct HomeView: View {
                     if hobbies.isEmpty {
                         EmptyHobbyView()
                     } else {
-                        ForEach(hobbies) { hobby in
+                        
+                        let sorted = hobbies.sorted { $0.isFavourite && !$1.isFavourite }
+                        
+                        ForEach(sorted) { hobby in
                             NavigationLink {
                                 DetailHobbyView(hobby: hobby)
                             } label: {
@@ -80,5 +83,4 @@ struct HomeView: View {
 
 #Preview {
     HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-        .background(HomeBackground())
 }

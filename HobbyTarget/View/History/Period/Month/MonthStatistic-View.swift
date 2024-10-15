@@ -10,7 +10,7 @@ import CoreData
 
 
 struct MonthStatisticView: View {
-   var body: some View {
+    var body: some View {
         VStack(spacing: 35) {
             
             VStack {

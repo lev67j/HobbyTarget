@@ -9,17 +9,22 @@ import SwiftUI
 import UserNotifications
 import CoreData
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
     private var homeVM: HomeViewModel!
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-         
+    /*
+    var saveTimeHobby: TimeInterval = 0
+    var isExitApplication: Bool = false
+    */
+    // MARK: - reset time hobby
+    func application(_ application: UIApplication) -> Bool {
+        
         // Request permission for notify
         requestNotificationPermission()
         
         // Let's plan "silent" notify
         scheduleSilentNotification()
+        
         return true
     }
     
@@ -67,4 +72,41 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         }
         completionHandler()
     }
+    
+    
+    /*
+    // MARK: - save time hobby
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        isExitApplication = true
+        let currentTime = Date()
+        UserDefaults.standard.set(currentTime, forKey: "lastCloseTime")
+        print("applicationDidEnterBackground")
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication)  {
+        isExitApplication = true
+        let currentTime = Date()
+        UserDefaults.standard.set(currentTime, forKey: "lastCloseTime")
+        print("applicationWillTerminate")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        if let lastCloseTime = UserDefaults.standard.object(forKey: "lastCloseTime") as? Date {
+            DispatchQueue.main.async {
+                self.saveTimeHobby = Date().timeIntervalSince(lastCloseTime)
+            }
+        }
+        print("applicationWillEnterForeground")
+    }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        if let lastCloseTime = UserDefaults.standard.object(forKey: "lastCloseTime") as? Date {
+            DispatchQueue.main.async {
+                self.saveTimeHobby = Date().timeIntervalSince(lastCloseTime)
+            }
+        }
+        print("applicationDidFinishLaunching")
+    }
+    */
 }
