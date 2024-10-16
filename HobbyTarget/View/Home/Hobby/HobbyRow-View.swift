@@ -103,7 +103,7 @@
          // save StartTime
  //        UserDefaults.standard.isStart = isStartTime
          
-         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in      // test speed!
+         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in      
              elapsedTime += 1.0
          }
          // }
