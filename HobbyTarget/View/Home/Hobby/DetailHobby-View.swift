@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DetailHobbyView: View {
     var hobby: Hobby 
-    
+     
     var body: some View {
         Form {
             Section {
                 Text("Name: \(hobby.name ?? "Unknown")")
                 
-                Text("Time Target: \(hobby.timeTarget ?? "Not specified")")
+                Text("Time Target: \(hobby.timeTarget ?? "0 hours")")
                 
                 Text("Favourite: \(hobby.isFavourite ? "Yes" : "No")")
                 
@@ -29,10 +29,8 @@ struct DetailView: View {
             }
         }
         .navigationTitle("Hobby Details")
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.ultraThinMaterial)
     }
+    
         
     // Formats
     private func formatDate(_ date: Date) -> String {

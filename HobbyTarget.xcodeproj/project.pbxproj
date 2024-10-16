@@ -20,8 +20,22 @@
 		0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */; };
 		0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */; };
 		0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */; };
-		0BB8C3062C648F1B004D1D01 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3052C648F1B004D1D01 /* DetailView.swift */; };
-		0BB8C3082C6496FC004D1D01 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3072C6496FC004D1D01 /* HistoryView.swift */; };
+		0B44B7D62C921A5A00513186 /* RestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44B7D52C921A5A00513186 /* RestTime.swift */; };
+		0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */; };
+		0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */; };
+		0B6A90032C6769DF00840C06 /* PeriodStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */; };
+		0B8F09E12C68C89B00EF7423 /* EmptyMonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */; };
+		0B98E71B2CA4537C00DF7212 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */; };
+		0BA115762C65DFAA00D12826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115752C65DFAA00D12826 /* AppDelegate.swift */; };
+		0BA115782C663B6F00D12826 /* MonthAverage-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA115772C663B6F00D12826 /* MonthAverage-View.swift */; };
+		0BA1157B2C663C0400D12826 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1157A2C663C0400D12826 /* Date+.swift */; };
+		0BA1157D2C663D0A00D12826 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1157C2C663D0A00D12826 /* Period.swift */; };
+		0BB8C3062C648F1B004D1D01 /* DetailHobby-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3052C648F1B004D1D01 /* DetailHobby-View.swift */; };
+		0BB8C3082C6496FC004D1D01 /* History-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3072C6496FC004D1D01 /* History-View.swift */; };
+		0BB8C30C2C64F648004D1D01 /* Month-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C30B2C64F648004D1D01 /* Month-View.swift */; };
+		0BB8C3102C64F671004D1D01 /* Day-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C30F2C64F671004D1D01 /* Day-View.swift */; };
+		0BB8C31C2C64FA24004D1D01 /* MonthStatistic-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */; };
+		0BB8C3212C6500AD004D1D01 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C3202C6500AD004D1D01 /* DateValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +72,22 @@
 		0B2217092C63E0CC00AEB3EB /* Home-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-ViewModel.swift"; sourceTree = "<group>"; };
 		0B22170C2C63E28F00AEB3EB /* CreateHobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyViewModel.swift; sourceTree = "<group>"; };
 		0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HobbyRow-View.swift"; sourceTree = "<group>"; };
-		0BB8C3052C648F1B004D1D01 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		0BB8C3072C6496FC004D1D01 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0B44B7D52C921A5A00513186 /* RestTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTime.swift; sourceTree = "<group>"; };
+		0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimePerDay.swift; sourceTree = "<group>"; };
+		0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Month-ViewModel.swift"; sourceTree = "<group>"; };
+		0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStateViewModel.swift; sourceTree = "<group>"; };
+		0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyMonthStatistic-View.swift"; sourceTree = "<group>"; };
+		0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		0BA115752C65DFAA00D12826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0BA115772C663B6F00D12826 /* MonthAverage-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthAverage-View.swift"; sourceTree = "<group>"; };
+		0BA1157A2C663C0400D12826 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		0BA1157C2C663D0A00D12826 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		0BB8C3052C648F1B004D1D01 /* DetailHobby-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailHobby-View.swift"; sourceTree = "<group>"; };
+		0BB8C3072C6496FC004D1D01 /* History-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History-View.swift"; sourceTree = "<group>"; };
+		0BB8C30B2C64F648004D1D01 /* Month-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Month-View.swift"; sourceTree = "<group>"; };
+		0BB8C30F2C64F671004D1D01 /* Day-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day-View.swift"; sourceTree = "<group>"; };
+		0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthStatistic-View.swift"; sourceTree = "<group>"; };
+		0BB8C3202C6500AD004D1D01 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0B2217042C63DE1E00AEB3EB /* App */,
+				0BA115792C663BE600D12826 /* Extension */,
 				0B2217032C63DE1500AEB3EB /* View */,
 				0B2217052C63DE4C00AEB3EB /* Model */,
 				0B2217062C63DE5C00AEB3EB /* ViewModel */,
@@ -148,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				0B22170B2C63E23100AEB3EB /* Home */,
-				0B22170F2C63E29E00AEB3EB /* Hobby */,
 				0BB8C3092C649703004D1D01 /* History */,
 			);
 			path = View;
@@ -158,8 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				0B2216D82C63DCA200AEB3EB /* Assets.xcassets */,
-				0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */,
 				0B2216D42C63DCA100AEB3EB /* HobbyTargetApp.swift */,
+				0BA115752C65DFAA00D12826 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -167,8 +195,8 @@
 		0B2217052C63DE4C00AEB3EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B2216DD2C63DCA200AEB3EB /* Persistence.swift */,
-				0B2216DF2C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld */,
+				0BA115732C65D14300D12826 /* Month */,
+				0BB8C3222C650125004D1D01 /* Core Data */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +204,7 @@
 		0B2217062C63DE5C00AEB3EB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0B6A90042C6769E500840C06 /* Period */,
 				0B22170E2C63E29400AEB3EB /* Home */,
 				0B2217102C63E2AC00AEB3EB /* Hobby */,
 			);
@@ -186,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				0B2216D62C63DCA100AEB3EB /* Home-View.swift */,
+				0B22170F2C63E29E00AEB3EB /* Hobby */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -201,8 +231,9 @@
 		0B22170F2C63E29E00AEB3EB /* Hobby */ = {
 			isa = PBXGroup;
 			children = (
+				0B2217112C63E84F00AEB3EB /* HobbyRow-View.swift */,
 				0B2217072C63DF6A00AEB3EB /* CreateHobby-View.swift */,
-				0BB8C3052C648F1B004D1D01 /* DetailView.swift */,
+				0BB8C3052C648F1B004D1D01 /* DetailHobby-View.swift */,
 			);
 			path = Hobby;
 			sourceTree = "<group>";
@@ -215,12 +246,143 @@
 			path = Hobby;
 			sourceTree = "<group>";
 		};
+		0B44B7D12C921A0400513186 /* Rest Time */ = {
+			isa = PBXGroup;
+			children = (
+				0B44B7D52C921A5A00513186 /* RestTime.swift */,
+			);
+			path = "Rest Time";
+			sourceTree = "<group>";
+		};
+		0B44B7D22C921A0B00513186 /* Empty Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				0B8F09E02C68C89B00EF7423 /* EmptyMonthStatistic-View.swift */,
+			);
+			path = "Empty Statistic";
+			sourceTree = "<group>";
+		};
+		0B44B7D32C921A2100513186 /* Average */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D15A62C8B3C21001F7025 /* CircleTimePerDay.swift */,
+				0BA115772C663B6F00D12826 /* MonthAverage-View.swift */,
+			);
+			path = Average;
+			sourceTree = "<group>";
+		};
+		0B44B7D42C921A2C00513186 /* Statistic Row */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Statistic Row";
+			sourceTree = "<group>";
+		};
+		0B5D15A52C8B38BF001F7025 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				0B44B7D42C921A2C00513186 /* Statistic Row */,
+				0B44B7D12C921A0400513186 /* Rest Time */,
+				0B44B7D32C921A2100513186 /* Average */,
+				0B44B7D22C921A0B00513186 /* Empty Statistic */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		0B5D15A82C8B3CB3001F7025 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D15A92C8B3CD5001F7025 /* Month-ViewModel.swift */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
+		0B6A90042C6769E500840C06 /* Period */ = {
+			isa = PBXGroup;
+			children = (
+				0B6A90022C6769DF00840C06 /* PeriodStateViewModel.swift */,
+				0B5D15A82C8B3CB3001F7025 /* Month */,
+			);
+			path = Period;
+			sourceTree = "<group>";
+		};
+		0B6A90052C676E8E00840C06 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D15A52C8B38BF001F7025 /* Statistic */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		0BA115732C65D14300D12826 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				0BB8C3232C650130004D1D01 /* Date */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
+		0BA115792C663BE600D12826 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1157A2C663C0400D12826 /* Date+.swift */,
+				0B98E71A2CA4537C00DF7212 /* UserDefaults+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0BB8C3092C649703004D1D01 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				0BB8C3072C6496FC004D1D01 /* HistoryView.swift */,
+				0BB8C3072C6496FC004D1D01 /* History-View.swift */,
+				0BB8C30A2C64F631004D1D01 /* Period */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		0BB8C30A2C64F631004D1D01 /* Period */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1157C2C663D0A00D12826 /* Period.swift */,
+				0BB8C3172C64F894004D1D01 /* Month */,
+				0BB8C3192C64F8A8004D1D01 /* Day */,
+			);
+			path = Period;
+			sourceTree = "<group>";
+		};
+		0BB8C3172C64F894004D1D01 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				0BB8C30B2C64F648004D1D01 /* Month-View.swift */,
+				0BB8C31B2C64FA24004D1D01 /* MonthStatistic-View.swift */,
+				0B6A90052C676E8E00840C06 /* SubView */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
+		0BB8C3192C64F8A8004D1D01 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				0BB8C30F2C64F671004D1D01 /* Day-View.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		0BB8C3222C650125004D1D01 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0B2216DD2C63DCA200AEB3EB /* Persistence.swift */,
+				0B2216DF2C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		0BB8C3232C650130004D1D01 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				0BB8C3202C6500AD004D1D01 /* DateValue.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,14 +515,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8F09E12C68C89B00EF7423 /* EmptyMonthStatistic-View.swift in Sources */,
+				0BB8C31C2C64FA24004D1D01 /* MonthStatistic-View.swift in Sources */,
+				0BB8C30C2C64F648004D1D01 /* Month-View.swift in Sources */,
 				0B2216DE2C63DCA200AEB3EB /* Persistence.swift in Sources */,
-				0BB8C3062C648F1B004D1D01 /* DetailView.swift in Sources */,
+				0B44B7D62C921A5A00513186 /* RestTime.swift in Sources */,
+				0BB8C3102C64F671004D1D01 /* Day-View.swift in Sources */,
+				0B98E71B2CA4537C00DF7212 /* UserDefaults+.swift in Sources */,
+				0B5D15A72C8B3C21001F7025 /* CircleTimePerDay.swift in Sources */,
+				0B5D15AA2C8B3CD5001F7025 /* Month-ViewModel.swift in Sources */,
+				0BB8C3062C648F1B004D1D01 /* DetailHobby-View.swift in Sources */,
 				0B22170A2C63E0CC00AEB3EB /* Home-ViewModel.swift in Sources */,
+				0BA1157B2C663C0400D12826 /* Date+.swift in Sources */,
 				0B2217082C63DF6A00AEB3EB /* CreateHobby-View.swift in Sources */,
+				0B6A90032C6769DF00840C06 /* PeriodStateViewModel.swift in Sources */,
+				0BA1157D2C663D0A00D12826 /* Period.swift in Sources */,
+				0BA115762C65DFAA00D12826 /* AppDelegate.swift in Sources */,
 				0B22170D2C63E28F00AEB3EB /* CreateHobbyViewModel.swift in Sources */,
+				0BA115782C663B6F00D12826 /* MonthAverage-View.swift in Sources */,
 				0B2216D72C63DCA100AEB3EB /* Home-View.swift in Sources */,
 				0B2217122C63E84F00AEB3EB /* HobbyRow-View.swift in Sources */,
-				0BB8C3082C6496FC004D1D01 /* HistoryView.swift in Sources */,
+				0BB8C3082C6496FC004D1D01 /* History-View.swift in Sources */,
+				0BB8C3212C6500AD004D1D01 /* DateValue.swift in Sources */,
 				0B2216D52C63DCA100AEB3EB /* HobbyTargetApp.swift in Sources */,
 				0B2216E12C63DCA200AEB3EB /* HobbyTarget.xcdatamodeld in Sources */,
 			);
@@ -534,6 +710,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +740,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
