@@ -18,12 +18,21 @@ extension UserDefaults {
         }
     }
     
-    var elapsedTime: TimeInterval {
+    var saveTimeHobby: TimeInterval {
         get {
             return double(forKey: "elapsedTime")
         }
         set {
-            set(newValue, forKey: "elapsedTime")
+            set(max(newValue, 0), forKey: "elapsedTime")
+        }
+    }
+    
+    var leaveTimeUser: Date? {
+        get {
+            return object(forKey: "leaveTimeUser") as? Date
+        }
+        set {
+            set(newValue, forKey: "leaveTimeUser")
         }
     }
 }

@@ -74,9 +74,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
     
     
-    /*
     // MARK: - save time hobby
-    
+    /*
     func applicationDidEnterBackground(_ application: UIApplication) {
         isExitApplication = true
         let currentTime = Date()

@@ -14,24 +14,23 @@
      var hobby: Hobby
     
      // AppDelegate
-   //  @ObservedObject var appDelegate = AppDelegate()
+     @ObservedObject var appDelegate = AppDelegate()
      
      // Timer
      @State private var timer: Timer?
-     @State private var isRunning: Bool = false
-/*
+    
      // UserDefaults
-     @State private var isStartTime: Bool = UserDefaults.standard.isStart // for save  isStartTime.toggle() UserDefaults.standard.isStart = isStartTime
-     @State private var elapsedTime: TimeInterval = UserDefaults.standard.elapsedTime
-     */
-     @State private var isStartTime: Bool = false
+     @State private var isStartTime: Bool = UserDefaults.standard.isStart
+     @State private var saveTimeHobby: TimeInterval = UserDefaults.standard.saveTimeHobby
+     @State private var leaveTimeUser: Date? = UserDefaults.standard.leaveTimeUser
      @State private var elapsedTime: TimeInterval = 0
-  
+     
+     
      var body: some View {
          VStack(alignment: .leading) {
              
              // For test
-   //          Text("\(hobby.name ?? "Unknown")                                                                                            isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(appDelegate.saveTimeHobby)                                                                             elapsedTime: \(elapsedTime)")
+             Text("                                                                                                                           isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(saveTimeHobby)                                                                                        elapsedTime: \(elapsedTime) ")
              
              HStack {
                  Text("\(hobby.name ?? "Unknown")")
@@ -84,35 +83,53 @@
          .cornerRadius(15)
          .shadow(radius: 5)
          .padding(.horizontal)
-         /*
          .onAppear {
-             loadSavedData()
-         }
-         .onDisappear {
-             if appDelegate.isExitApplication {
-                 stopTimerForExit()
+             if isStartTime {
+                 saveTimeHobby += differenceTime(entryTime: Date())
              }
          }
-          */
+         .onDisappear {
+             if isStartTime {
+                 saveTimeHobby = elapsedTime // save: hobby past time
+                 UserDefaults.standard.saveTimeHobby = saveTimeHobby
+                 
+                 leaveTimeUser = Date()
+                 UserDefaults.standard.leaveTimeUser = leaveTimeUser // save: time at which the user logged out
+             }
+         }
      }
+  
+     func differenceTime(entryTime: Date) -> Double {
+         guard let leaveTime = leaveTimeUser else { return 0.0 }
+         
+         let difference = entryTime.timeIntervalSince(leaveTime)
+         
+         print("\(difference) from differenceTime")
+         return difference
+     }
+
      
      func startTimer() {
-         //   if isStartTime == false {
-         isStartTime = true
-         
-         // save StartTime
- //        UserDefaults.standard.isStart = isStartTime
-         
-         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in      
-             elapsedTime += 1.0
+         if isStartTime == false {
+             isStartTime = true
+             
+             // save StartTime
+             UserDefaults.standard.isStart = isStartTime
+             
+             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                 elapsedTime += 1.0
+             }
          }
-         // }
      }
 
      private func stopTimer() {
          
          // save result
-         hobby.timeForToday += elapsedTime
+         
+         saveTimeHobby += elapsedTime
+         hobby.timeForToday += saveTimeHobby  // test
+         
+         //  hobby.timeForToday += elapsedTime
          
          do {
              try viewContext.save()
@@ -123,36 +140,18 @@
          
          // stop
          elapsedTime = 0
+         timer?.invalidate()
+         timer = nil
+         
          isStartTime = false
-         timer?.invalidate()
-         timer = nil
+         saveTimeHobby = 0
+         leaveTimeUser = nil
          
-         // save StartTime
-       //  UserDefaults.standard.isStart = isStartTime
+         // Save User Defaults
+         UserDefaults.standard.isStart = isStartTime
+         UserDefaults.standard.saveTimeHobby = saveTimeHobby
      }
-     /*
-     private func stopTimerForExit() {
-         
-         // save elapsedTime
-         UserDefaults.standard.elapsedTime = elapsedTime
-         
-         timer?.invalidate()
-         timer = nil
-     }
-         
-     private func loadSavedData() {
-         if let lastCloseTime = UserDefaults.standard.object(forKey: "lastCloseTime") as? Date {
-             DispatchQueue.main.async {
-                 appDelegate.saveTimeHobby = Date().timeIntervalSince(lastCloseTime)
-             }
-         }
-         
-         if isStartTime {
-             elapsedTime += appDelegate.saveTimeHobby
-             startTimer()
-         }
-     }
-     */
+    
      private func formatTime(_ time: TimeInterval) -> String {
          let hours = Int(time) / 3600
          let minutes = (Int(time) % 3600) / 60
