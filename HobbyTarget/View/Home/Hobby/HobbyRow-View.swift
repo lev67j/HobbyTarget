@@ -85,7 +85,12 @@
          .padding(.horizontal)
          .onAppear {
              if isStartTime {
+                 
                  saveTimeHobby += differenceTime(entryTime: Date())
+                 
+                 elapsedTime = saveTimeHobby
+                 
+                 startTimer()
              }
          }
          .onDisappear {
@@ -95,6 +100,8 @@
                  
                  leaveTimeUser = Date()
                  UserDefaults.standard.leaveTimeUser = leaveTimeUser // save: time at which the user logged out
+                 
+                 elapsedTime = 0
              }
          }
      }
@@ -124,10 +131,9 @@
 
      private func stopTimer() {
          
-         // save result
          
          saveTimeHobby += elapsedTime
-         hobby.timeForToday += saveTimeHobby  // test
+         hobby.timeForToday += saveTimeHobby  // test !!!!
          
          //  hobby.timeForToday += elapsedTime
          
