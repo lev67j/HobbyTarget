@@ -90,7 +90,10 @@
                  
                  elapsedTime = saveTimeHobby
                  
-                 startTimer()
+                 
+                 leaveTimeUser = nil
+                 UserDefaults.standard.leaveTimeUser = leaveTimeUser
+               
              }
          }
          .onDisappear {
@@ -101,7 +104,9 @@
                  leaveTimeUser = Date()
                  UserDefaults.standard.leaveTimeUser = leaveTimeUser // save: time at which the user logged out
                  
-                 elapsedTime = 0
+               
+             } else {
+                 saveTimeHobby = 0
              }
          }
      }
@@ -157,6 +162,8 @@
          UserDefaults.standard.isStart = isStartTime
          UserDefaults.standard.saveTimeHobby = saveTimeHobby
      }
+     
+    
     
      private func formatTime(_ time: TimeInterval) -> String {
          let hours = Int(time) / 3600
@@ -170,4 +177,30 @@
              return "0min"
          }
      }
+     
+     
+     
+     // TEST!
+     func exitStartTimer() {
+         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+             elapsedTime += 1.0
+         }
+     }
+     
+     
+     private func exitStopTimer() {
+        
+         do {
+             try viewContext.save()
+         } catch {
+             let nsError = error as NSError
+             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+         }
+         
+         // stop
+         elapsedTime = 0
+         timer?.invalidate()
+         timer = nil
+      
+    }
  }
