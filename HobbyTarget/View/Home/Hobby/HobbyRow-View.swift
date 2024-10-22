@@ -14,7 +14,7 @@
      var hobby: Hobby
     
      // AppDelegate
-     @ObservedObject var appDelegate = AppDelegate()
+    //@ObservedObject var appDelegate = AppDelegate()
      
      // Timer
      @State private var timer: Timer?
