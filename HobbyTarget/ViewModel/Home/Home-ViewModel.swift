@@ -19,6 +19,7 @@ final class HomeViewModel: ObservableObject {
         self.context = context
         setupDailyReset()
         scheduleDailyResetNotification()
+        setupMonthlyReset()
     }
     
 
