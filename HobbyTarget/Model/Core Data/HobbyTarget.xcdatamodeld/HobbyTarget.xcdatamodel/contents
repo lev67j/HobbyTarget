@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Hobby" representedClassName="Hobby" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateId" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isStartTime" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="leaveTimeUser" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="monthlyTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="saveTimeHobby" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="saveTimer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="timeForToday" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="timeTarget" optional="YES" attributeType="String"/>

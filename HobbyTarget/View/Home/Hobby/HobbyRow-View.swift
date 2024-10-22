@@ -18,19 +18,19 @@
      
      // Timer
      @State private var timer: Timer?
+     @State private var elapsedTime: TimeInterval = 0
     
      // UserDefaults
-     @State private var isStartTime: Bool = UserDefaults.standard.isStart
-     @State private var saveTimeHobby: TimeInterval = UserDefaults.standard.saveTimeHobby
-     @State private var leaveTimeUser: Date? = UserDefaults.standard.leaveTimeUser
-     @State private var elapsedTime: TimeInterval = 0
-     
+    // @State private var isStartTime: Bool = UserDefaults.standard.isStart
+    // @State private var saveTimeHobby: TimeInterval = UserDefaults.standard.saveTimeHobby
+    // @State private var leaveTimeUser: Date? = UserDefaults.standard.leaveTimeUser
+    
      
      var body: some View {
          VStack(alignment: .leading) {
              
              // For test
-             Text("                                                                                                                           isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(String(format: "%.1f", saveTimeHobby))                                                                            elapsedTime: \(String(format: "%.1f", elapsedTime)) ")
+             Text("                                                                                                                           isStartTime: \(hobby.isStartTime)                                                                                           saveTimeHobby: \(String(format: "%.1f", hobby.saveTimeHobby))                                                                            elapsedTime: \(String(format: "%.1f", elapsedTime)) ")
              
              HStack {
                  Text("\(hobby.name ?? "Unknown")")
@@ -59,7 +59,7 @@
                  }
                  .buttonStyle(PlainButtonStyle())
                  
-                 if isStartTime {
+                 if hobby.isStartTime {
                      Text(formatTime(elapsedTime))
                          .foregroundStyle(.black)
                  }
@@ -84,36 +84,53 @@
          .shadow(radius: 5)
          .padding(.horizontal)
          .onAppear {
-             if isStartTime {
+             if hobby.isStartTime {
                  
-                 saveTimeHobby += differenceTime(entryTime: Date())
+                 hobby.saveTimeHobby += differenceTime(entryTime: Date())
                  
-                 elapsedTime = saveTimeHobby
+                 elapsedTime = hobby.saveTimeHobby
                  
                  exitStartTimer()
                  
-                 leaveTimeUser = nil
-                 UserDefaults.standard.leaveTimeUser = leaveTimeUser
+                 hobby.leaveTimeUser = nil
                
+                 do {
+                     try viewContext.save()
+                 } catch {
+                     let nsError = error as NSError
+                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                 }
              }
          }
          .onDisappear {
-             if isStartTime {
-                 saveTimeHobby = elapsedTime // save: hobby past time
-                 UserDefaults.standard.saveTimeHobby = saveTimeHobby
+             if hobby.isStartTime {
+                 hobby.saveTimeHobby = elapsedTime // save: hobby past time
                  
-                 leaveTimeUser = Date()
-                 UserDefaults.standard.leaveTimeUser = leaveTimeUser // save: time at which the user logged out
+                 hobby.leaveTimeUser = Date()
                  
                  elapsedTime = 0
+                 
+                 do {
+                     try viewContext.save()
+                 } catch {
+                     let nsError = error as NSError
+                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                 }
              } else {
-                 saveTimeHobby = 0
+                 hobby.saveTimeHobby = 0
+                 
+                 do {
+                     try viewContext.save()
+                 } catch {
+                     let nsError = error as NSError
+                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                 }
              }
          }
      }
   
      func differenceTime(entryTime: Date) -> Double {
-         guard let leaveTime = leaveTimeUser else { return 0.0 }
+         guard let leaveTime = hobby.leaveTimeUser else { return 0.0 }
          
          let difference = entryTime.timeIntervalSince(leaveTime)
          
@@ -122,15 +139,27 @@
      }
 
      
+      func exitStartTimer() {
+          if timer == nil {
+              timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                  elapsedTime += 1.0
+              }
+          }
+      }
+     
      func startTimer() {
-         if isStartTime == false {
-             isStartTime = true
-             
-             // save StartTime
-             UserDefaults.standard.isStart = isStartTime
-             
+         if hobby.isStartTime == false {
+             hobby.isStartTime = true
+           
              timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                  elapsedTime += 1.0
+             }
+             
+             do {
+                 try viewContext.save()
+             } catch {
+                 let nsError = error as NSError
+                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
              }
          }
      }
@@ -138,10 +167,20 @@
      private func stopTimer() {
          
          
-         saveTimeHobby += elapsedTime
-         hobby.timeForToday += saveTimeHobby  // test !!!!
+         hobby.saveTimeHobby += elapsedTime
+         hobby.timeForToday += hobby.saveTimeHobby  // test !!!!
          
          //  hobby.timeForToday += elapsedTime
+         
+    
+         // stop
+         elapsedTime = 0
+         timer?.invalidate()
+         timer = nil
+         
+         hobby.isStartTime = false
+         hobby.saveTimeHobby = 0
+         hobby.leaveTimeUser = nil
          
          do {
              try viewContext.save()
@@ -149,19 +188,6 @@
              let nsError = error as NSError
              fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
          }
-         
-         // stop
-         elapsedTime = 0
-         timer?.invalidate()
-         timer = nil
-         
-         isStartTime = false
-         saveTimeHobby = 0
-         leaveTimeUser = nil
-         
-         // Save User Defaults
-         UserDefaults.standard.isStart = isStartTime
-         UserDefaults.standard.saveTimeHobby = saveTimeHobby
      }
      
     
@@ -178,32 +204,4 @@
              return "0min"
          }
      }
-     
-     
-     
-     // TEST!
-     func exitStartTimer() {
-         if timer == nil {
-             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                 elapsedTime += 1.0
-             }
-         }
-     }
-     
-     
-     private func exitStopTimer() {
-        
-         do {
-             try viewContext.save()
-         } catch {
-             let nsError = error as NSError
-             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-         }
-         
-         // stop
-         elapsedTime = 0
-         timer?.invalidate()
-         timer = nil
-      
-    }
  }
