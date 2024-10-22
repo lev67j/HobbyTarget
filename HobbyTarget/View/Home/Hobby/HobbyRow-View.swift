@@ -30,7 +30,7 @@
          VStack(alignment: .leading) {
              
              // For test
-             Text("                                                                                                                           isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(saveTimeHobby)                                                                                        elapsedTime: \(elapsedTime) ")
+             Text("                                                                                                                           isStartTime: \(isStartTime)                                                                                           saveTimeHobby: \(String(format: "%.1f", saveTimeHobby))                                                                            elapsedTime: \(String(format: "%.1f", elapsedTime)) ")
              
              HStack {
                  Text("\(hobby.name ?? "Unknown")")
@@ -90,6 +90,7 @@
                  
                  elapsedTime = saveTimeHobby
                  
+                 exitStartTimer()
                  
                  leaveTimeUser = nil
                  UserDefaults.standard.leaveTimeUser = leaveTimeUser
@@ -104,7 +105,7 @@
                  leaveTimeUser = Date()
                  UserDefaults.standard.leaveTimeUser = leaveTimeUser // save: time at which the user logged out
                  
-               
+                 elapsedTime = 0
              } else {
                  saveTimeHobby = 0
              }
@@ -182,8 +183,10 @@
      
      // TEST!
      func exitStartTimer() {
-         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-             elapsedTime += 1.0
+         if timer == nil {
+             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                 elapsedTime += 1.0
+             }
          }
      }
      
