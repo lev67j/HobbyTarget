@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-import UserNotifications
+//import UserNotifications
 
 @main
 struct HobbyTargetApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+   // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @Environment(\.scenePhase) private var scenePhase
     let persistenceController = PersistenceController.shared
     
     var body: some Scene {
@@ -31,6 +33,22 @@ struct HobbyTargetApp: App {
                         Image(systemName: "calendar.badge.clock")
                         Text("History")
                     }
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            
+            switch newPhase {
+                
+            case .active:
+                print("active")
+                
+            case .inactive:
+                print("inactive")
+             
+            case .background:
+                print("background")
+             
+            @unknown default: break
             }
         }
     }
