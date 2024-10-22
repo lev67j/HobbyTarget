@@ -8,7 +8,7 @@
 import SwiftUI
 import UserNotifications
 import CoreData
-
+/*
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     
     private var homeVM: HomeViewModel!
@@ -109,3 +109,4 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
     */
 }
+*/

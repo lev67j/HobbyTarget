@@ -18,6 +18,7 @@ final class HomeViewModel: ObservableObject {
     init(context: NSManagedObjectContext) {
         self.context = context
         setupDailyReset()
+        setupMonthlyReset()
         scheduleDailyResetNotification()
     }
     
