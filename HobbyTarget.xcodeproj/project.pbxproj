@@ -271,17 +271,9 @@
 			path = Average;
 			sourceTree = "<group>";
 		};
-		0B44B7D42C921A2C00513186 /* Statistic Row */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Statistic Row";
-			sourceTree = "<group>";
-		};
 		0B5D15A52C8B38BF001F7025 /* Statistic */ = {
 			isa = PBXGroup;
 			children = (
-				0B44B7D42C921A2C00513186 /* Statistic Row */,
 				0B44B7D12C921A0400513186 /* Rest Time */,
 				0B44B7D32C921A2100513186 /* Average */,
 				0B44B7D22C921A0B00513186 /* Empty Statistic */,

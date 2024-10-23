@@ -40,13 +40,13 @@ struct HobbyTargetApp: App {
             switch newPhase {
                 
             case .active:
-                print("active")
+                print("")
                 
             case .inactive:
-                print("inactive")
+                print("")
              
             case .background:
-                print("background")
+                print("")
              
             @unknown default: break
             }
